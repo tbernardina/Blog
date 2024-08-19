@@ -1,0 +1,94 @@
+/*arquivo separado para barra de navegação*/
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #666;
+    padding: 10px;
+    align-items: center;
+}
+
+.nome_navbar{
+    color: #fff;
+    padding: 10px;
+}
+
+.link_navbar {
+    text-decoration: none; 
+    color: #fff; 
+    padding: 10px 20px; 
+    font-weight: bold; 
+}
+
+.link_navbar:hover {
+    background-color: #123142; 
+    border-radius: 5px; 
+}
+
+.link_navbar.active{ 
+    color: #007bff; 
+    border-bottom: 2px solid #007bff; 
+}
+#mensagem{
+    text-align: center;
+}
+.signup-link {
+    text-align: center;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+@media screen and (max-width: 649px) {
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .cent_nav{
+        display: flex;
+        align-items: center;
+    }
+    .link_menu{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .link_navbar {
+        display: none; /* Esconde os links inicialmente */
+        width: 100%;
+        background-color: #666;
+        text-align: left;
+    }
+
+     .link_navbar.show {
+        display: block; /* Exibe os links quando a classe 'show' é adicionada */
+    }
+
+    .link_navbar a {
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .Titulo {
+        padding: 10px;
+        border: none;
+    }
+}

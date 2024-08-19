@@ -1,0 +1,47 @@
+<?php 
+include("start.php"); 
+include("conexao.php");
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Post</title>
+    <link rel="stylesheet" href="css_criarpost.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="ScriptNavbar.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Criar Post</h1>
+    </header>
+    <nav>
+        <div class="cent_nav">
+            <span id='menu-toggle' class="material-symbols-outlined" onclick='showMenus()'>menu</span>
+            <strong class='nome_navbar'> Bem vindo, <?php echo $_SESSION['nome'] ?></strong>
+        </div>
+        <a class='link_navbar' href="Home.php">Home</a>
+        <a class='link_navbar' href="Logout.php">Sair</a>
+    </nav>
+    <section>
+        <h2>Novo Post</h2>
+        <form id="postForm" method="POST" action="teste_imagem.php">
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="conteudo">Conteúdo:</label><br>
+            <textarea id="conteudo" name="conteudo"></textarea><br>
+            <div class="anexos">
+                <input type="file" id="file" name="anexo" accept="image/*">
+                <label for="file">Escolher arquivo</label>
+            </div>
+            <label for="autor">Autor:</label><br>
+            <input type="text" id="autor" name="autor" value="<?php echo $_SESSION['nome_C']?>" disabled><br><br>
+            <input type="submit" value="Postar">
+        </form>
+        <div id='mensagem_post'><?php if(isset($mensagem)) {echo $mensagem;} ?></div>
+    </section>
+</body>
+</html>
