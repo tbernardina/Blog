@@ -16,6 +16,6 @@ $mensagem = "";
             $mensagem = "Erro ao cadastrar usuário: " . $conn->error;
         }
     }
-header('Location: Cadastro.php?mensagem=' $mensagem);
+header('Location: Cadastro.php?mensagem=' . urlencode($mensagem));
 exit();
 $conn->close();
