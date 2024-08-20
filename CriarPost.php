@@ -28,7 +28,7 @@ include("conexao.php");
     </nav>
     <section>
         <h2>Novo Post</h2>
-        <form id="postForm" method="POST" action="teste_imagem.php">
+        <form id="postForm" method="POST" action="ProcessarPost.php" enctype="multipart/form-data">
             <label for="titulo">Título:</label><br>
             <input type="text" id="titulo" name="titulo"><br>
             <label for="conteudo">Conteúdo:</label><br>
