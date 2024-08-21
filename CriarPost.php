@@ -1,6 +1,7 @@
 <?php 
 include("start.php"); 
 include("conexao.php");
+$mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -41,7 +42,7 @@ include("conexao.php");
             <input type="text" id="autor" name="autor" value="<?php echo $_SESSION['nome_C']?>" disabled><br><br>
             <input type="submit" value="Postar">
         </form>
-        <div id='mensagem_post'><?php if(isset($mensagem)) {echo $mensagem;} ?></div>
+        <div id='mensagem_post'><?php echo $mensagem; ?></div>
     </section>
 </body>
 </html>
