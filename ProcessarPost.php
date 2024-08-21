@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             move_uploaded_file($anexos['tmp_name'], 'imagens/'.$anexos['name']); //Move o anexo para a pasta "imagens"
         }else {
             $mensagem = 'Esse arquivo não foi suportado pelo sistema.';
-            header('Location: CriarPost.php?mensagem=' . urldecode($mensagem));
+            header('Location: CriarPost.php?MensagemDepuracao=' . urldecode($mensagem));
             exit();
         }
     }
@@ -32,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 // Código de insert dos posts criados
     $conn->close();
-    header("Location: CriaPost.php?mensagem= " . urlencode($mensagem));
+    header("Location: CriaPost.php?MensagemDepuracao= " . urlencode($mensagem));
     exit();
 }

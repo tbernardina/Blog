@@ -1,7 +1,5 @@
 <?php 
 include("start.php"); 
-include("conexao.php");
-$mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,6 +11,7 @@ $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="ScriptNavbar.js"></script>
+    <script src="ScriptMensagem.js"></script>
 
 </head>
 <body>
@@ -42,7 +41,8 @@ $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
             <input type="text" id="autor" name="autor" value="<?php echo $_SESSION['nome_C']?>" disabled><br><br>
             <input type="submit" value="Postar">
         </form>
-        <div id='mensagem_post'><?php echo $mensagem; ?></div>
+        <div id='MensagemDepuracao'></div>
+        <script>ExibirMensagem();</script>
     </section>
 </body>
 </html>
