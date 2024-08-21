@@ -6,9 +6,8 @@ include('conexao.php');
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
         $senha = $_POST['senha'];
-
-        $insert = "INSERT INTO USUARIO (NOME, SOBRENOME, SENHA, NICKNAME) VALUES ('$nome', '$sobrenome', '$senha', '$nickname')";
-
+// Código de insert dos usuários cadastrados
+        $insert = "INSERT INTO USUARIO (NOME, SOBRENOME, SENHA, NICKNAME) VALUES ('$nome', '$sobrenome', '$senha', '$nickname')"; // Query de insert das informações do usuário
         if ($conn->query($insert) === TRUE) {
             $mensagem = "Usuário cadastrado com sucesso!";
             header("Location: Login.php");
@@ -17,5 +16,6 @@ include('conexao.php');
             header("Location: Cadastro.php?mensagem=" . urlencode($mensagem));
             exit();
         }
+// Código de insert dos usuários cadastrados
         $conn->close();
     }
