@@ -10,7 +10,7 @@ include('conexao.php');
         $insert = "INSERT INTO USUARIO (NOME, SOBRENOME, SENHA, NICKNAME) VALUES ('$nome', '$sobrenome', '$senha', '$nickname')"; // Query de insert das informações do usuário
         if ($conn->query($insert) === TRUE) {
             $mensagem = "Usuário cadastrado com sucesso!";
-            header("Location: Login.php");
+            header("Location: Login.html");
         } else {
             $mensagem = "Erro ao cadastrar usuário: " . $conn->error;
             header("Location: Cadastro.php?mensagem=" . urlencode($mensagem));

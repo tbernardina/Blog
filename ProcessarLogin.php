@@ -30,7 +30,7 @@ if(isset($_POST['nickname']) || isset($_POST['senha'])){
         
         } else{
             $mensagem = "Falha no login, usuário ou senha incorretos";
-            header("Location: Login.php?mensagem=" . urlencode($mensagem));
+            header("Location: Login.html?mensagem=" . urlencode($mensagem));
         }
     }
     $conn->close();

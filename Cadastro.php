@@ -24,7 +24,7 @@ $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
             <span id='menu-toggle' class="material-symbols-outlined" onclick='showMenus()'>menu</span>
         </div>
         <a class='link_navbar' href="Home.php">Home</a>
-        <a class='link_navbar' href="Login.php">Entrar</a>
+        <a class='link_navbar' href="Login.html">Entrar</a>
     </nav>
     <div class="container">
         <h2>Cadastro</h2>
@@ -36,7 +36,7 @@ $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
             <input type="submit" name = 'submit'value="Cadastrar">
         </form>
         <div class="signup-link">
-            <a href="Login.php">Já tem usuário? clique aqui!</a>
+            <a href="Login.html">Já tem usuário? clique aqui!</a>
         </div>
         <div id="mensagem"><?php echo $mensagem;?></div>
     </div>

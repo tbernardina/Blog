@@ -25,7 +25,7 @@ include("conexao.php");
             <strong class='nome_navbar'> Bem vindo, <?php echo $_SESSION['nome'] ?></strong>
         </div>
             <a class='link_navbar' href="Home.php">Home</a>
-            <a class='link_navbar' href="Login.php">Entrar</a>
+            <a class='link_navbar' href="Login.html">Entrar</a>
             <a class='link_navbar' href="CriarPost.php">Criar Post</a>
             <a class='link_navbar' href="Logout.php">Sair</a>
     </nav>
