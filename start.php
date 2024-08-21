@@ -4,6 +4,6 @@ if(!isset($_SESSION)){
 } 
 
 if(!isset($_SESSION['id'])){
-    die('Acesso negado, faça login primeiro. <p><a href=\'Login.php\'> Logar </a></p>');
+    die('Acesso negado, faça login primeiro. <p><a href=\'Login.html\'> Logar </a></p>');
 }
 ?>
