@@ -1,4 +1,4 @@
-/* Estilo da pagina Cadastro.php começa aqui*/
+/* Estilo da pagina Cadastro começa aqui*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,4 +29,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #555;
 }
-/*Estilo da pagina Cadastro.php termina aqui*/
+/*Estilo da pagina Cadastro termina aqui*/

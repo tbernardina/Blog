@@ -1,4 +1,4 @@
-/* Estilo da pagina Login.php começa aqui*/
+/* Estilo da pagina Login começa aqui*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,4 +29,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #555;
 }
-/* Estilo da pagina Login.php termina aqui*/
+/* Estilo da pagina Login termina aqui*/
