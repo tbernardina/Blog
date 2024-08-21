@@ -6,30 +6,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conteudo = $_POST['conteudo'];
     $autor = $_SESSION['id'];
     $anexos = $_FILES['anexo'];
-
-    $imagem = explode('.', $anexos['name']);
-    if($imagem[sizeof($imagem) -1] = '.jpeg' || $imagem[sizeof($imagem) -2] = '.png') {
-        move_uploaded_file($anexos['tmp_name'], 'imagens/'.$anexos['name']);
-
-    }else {
-        $mensagem = 'Esse arquivo não foi suportado pelo sistema.';
-        header('Location: CriarPost.php?mensagem=' . urldecode($mensagem));
-        exit();
+// Código de anexo de imagens
+    if(isset($anexos) && !empty($anexos['name'])){
+        $imagem = strtolower(pathinfo($anexos['name'], PATHINFO_EXTENSION)); //Captura o formato do anexo e verifica se está na lista de formatos válidos
+        if($imagem == 'jpg' || $imagem == 'png' || $imagem == 'jpeg') {
+            move_uploaded_file($anexos['tmp_name'], 'imagens/'.$anexos['name']); //Move o anexo para a pasta "imagens"
+        }else {
+            $mensagem = 'Esse arquivo não foi suportado pelo sistema.';
+            header('Location: CriarPost.php?mensagem=' . urldecode($mensagem));
+            exit();
+        }
     }
-
-    // Verifica se tanto o título quanto o conteúdo não estão vazios e faz a inserção do post ao banco de dados
-    if (!empty($titulo) && !empty($conteudo)) {
-        $sql = "INSERT INTO POSTS (TITULO, CONTEUDO, ANEXOS, USER_ID) VALUES ('$titulo', '$conteudo', '".$anexos['name']."', '$autor')";
-
+// Código de anexo de imagens
+// Código de insert dos posts criados
+    if (!empty($titulo) && !empty($conteudo)) { // Verifica se tanto o título quanto o conteúdo não estão vazios e faz a inserção do post ao banco de dados
+        $sql = "INSERT INTO POSTS (TITULO, CONTEUDO, ANEXOS, USER_ID) VALUES ('$titulo', '$conteudo', '".$anexos['name']."', '$autor')"; // Query de insert das informações dos posts
         if ($conn->query($sql) === TRUE) {
-            $mensagem = "Post inserido com sucesso.";
+            header('location: Home.php');
+            exit();
         } else {
             $mensagem = "Erro ao inserir post: " . $conn->error;
         }
     } else {
         $mensagem = "Por favor, preencha tanto o título quanto o conteúdo do post.";
     }
+// Código de insert dos posts criados
     $conn->close();
-    header('location: ' . 'Home.php');
+    header("Location: CriaPost.php?mensagem= " . urlencode($mensagem));
     exit();
 }
