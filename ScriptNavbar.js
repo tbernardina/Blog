@@ -1,3 +1,4 @@
+//Script para deixa a barra de navegação responsiva
 function showMenus() {
     var links = document.querySelectorAll('.link_navbar');
     links.forEach(function(link) {
