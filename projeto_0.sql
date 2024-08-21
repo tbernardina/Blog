@@ -45,7 +45,7 @@ CREATE TABLE `posts` (
   `POST_ID` int(11) NOT NULL,
   `TITULO` varchar(255) NOT NULL,
   `CONTEUDO` text DEFAULT NULL,
-  `ANEXOS` blob DEFAULT NULL,
+  `ANEXOS` varchar(50) DEFAULT NULL,
   `USER_ID` int(11) NOT NULL,
   `DATA_PUBLICACAO` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
