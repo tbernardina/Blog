@@ -44,7 +44,11 @@ include("conexao.php");
         ?>
                 <article>
                     <h3><?php echo $row['TITULO']; ?></h3>
-                    <?php echo $row['DATA_PUBLICACAO'] ?>
+                    <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
+                    <?php // Código de exibição das imagens anexadas
+                        $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
+                        if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
+                    ?>
                     <p><?php echo $row['CONTEUDO']; ?></p>
                     <p>Autor: <?php echo $row['NOME'] . " " . $row['SOBRENOME']; ?></p>
                     <form method="post" action="CriarComentário.php">
