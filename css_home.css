@@ -45,9 +45,13 @@ article {
     padding: 20px;
     margin-bottom: 20px;
 }
-h3 {
+.TituloPosts{
+    display: inline-flex;
+    text-align: center;
     color: #333;
     margin-top: 0;
+    font-size: 1.17em;
+    padding: 5px;
 }
 .post-info {
     color: #666;
@@ -78,5 +82,12 @@ h3 {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+}
+.Data{
+    display: inline-flex;
+    text-align: right;
+}
+.ImagemAnexos{
+    text-align: center;
 }
 /* Estilo da pagina Home.php termina aqui*/
