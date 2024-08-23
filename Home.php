@@ -43,12 +43,12 @@ include("conexao.php");
 
         ?>
                 <article>
-                    <div class="TituloPosts"><strong><?php echo $row['TITULO']; ?></strong></div>
-                    <div class="Data"><?php echo $row['DATA_PUBLICACAO'] ?></div>
-                    <div class='ImagemAnexos'>
+                    <h3><?php echo $row['TITULO']; ?></h3>
+                    <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
+                    <div class="ImagemAnexo">
                         <?php // Código de exibição das imagens anexadas
                             $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
-                            if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img src='$CaminhoImagem' alt='Imagem'>";};
+                            if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
                         ?>
                     </div>
                     <p><?php echo $row['CONTEUDO']; ?></p>
