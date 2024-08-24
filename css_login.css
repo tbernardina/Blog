@@ -8,11 +8,11 @@
 }
 
 body {
-    display: flex;
+    display: flex; /* Display flex tá bugando a página kkk*/
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('/img/pxfuel.jpg') no-repeat;
+    background: url('https://wallpapers.com/images/hd/4k-moving-scenery-desktop-vqoac0izoii89yl9.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
