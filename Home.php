@@ -12,7 +12,7 @@ include("conexao.php");
     <link rel="stylesheet" href="css_home.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="ScriptNavbar.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ include("conexao.php");
     </header>
     <nav> <!-- barra de navegação -->
         <div class='cent_nav'>
-            <span id='menu-toggle' class="material-symbols-outlined" onclick='showMenus()'>menu</span>
+            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
             <strong class='nome_navbar'> Bem vindo, <?php echo $_SESSION['nome'] ?></strong>
         </div>
             <a class='link_navbar' href="Home.php">Home</a>
