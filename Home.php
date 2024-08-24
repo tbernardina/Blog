@@ -9,58 +9,60 @@ include("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Fórum</title>
-    <link rel="stylesheet" href="css_home.css">
+    <link rel="stylesheet" href="css_login.css"> 
     <link rel="stylesheet" href="navbar.css">
-    <script src="ScriptNavbar.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="ScriptNavbar.js"></script>
 </head>
 
 <body>
     <header>
         <h1>Fórum</h1>
     </header>
-    <nav> <!-- barra de navegação -->
-        <div class='cent_nav'>
+    <nav>
+        <div class="cent_nav">
             <span id='menu-toggle' class="material-symbols-outlined" onclick='showMenus()'>menu</span>
-            <strong class='nome_navbar'> Bem vindo, <?php echo $_SESSION['nome'] ?></strong>
+            <strong class='nome_navbar'> Bem-vindo, <?php echo $_SESSION['nome'] ?></strong>
         </div>
-            <a class='link_navbar' href="Home.php">Home</a>
-            <a class='link_navbar' href="Login.html">Entrar</a>
-            <a class='link_navbar' href="CriarPost.php">Criar Post</a>
-            <a class='link_navbar' href="Logout.php">Sair</a>
+        <a class='link_navbar' href="Home.php">Home</a>
+        <a class='link_navbar' href="Login.html">Entrar</a>
+        <a class='link_navbar' href="CriarPost.php">Criar Post</a>
+        <a class='link_navbar' href="Logout.php">Sair</a>
     </nav>
-<!-- SEÇÃO DE POSTS -->
-    <section>
-        <h2>Últimas postagens</h2>
-        <?php
-        // Consulta para obter os posts do banco de dados
-        $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
-        $result = $conn->query($slct);
+    <div class="wrapper"> 
+        <section>
+            <h2>Últimas postagens</h2>
+            <?php
+            // Consulta para obter os posts do banco de dados
+            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
+            $result = $conn->query($slct);
 
-        if ($result->num_rows > 0) {
-            // Loop através de cada linha do resultado da consulta
-            while ($row = $result->fetch_assoc()) {
-
-        ?>
+            if ($result->num_rows > 0) {
+                // Loop através de cada linha do resultado da consulta
+                while ($row = $result->fetch_assoc()) {
+            ?>
                 <article>
                     <h3><?php echo $row['TITULO']; ?></h3>
                     <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
                     <div class="ImagemAnexo">
-                        <?php // Código de exibição das imagens anexadas
-                            $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
-                            if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
+                        <?php
+                        // Código de exibição das imagens anexadas
+                        $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
+                        if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
                         ?>
                     </div>
                     <p><?php echo $row['CONTEUDO']; ?></p>
                     <p>Autor: <?php echo $row['NOME'] . " " . $row['SOBRENOME']; ?></p>
                     <form method="post" action="CriarComentário.php">
                         <input type="hidden" name="postId" value="<?php echo $row['POST_ID']; ?>">
-                        <input type="text" name="conteudo_C" placeholder="Comente aqui">
-                        <input type="submit" name="submit_comment" value="Enviar">                        
+                        <div class="input-box">
+                            <input type="text" name="conteudo_C" placeholder="Comente aqui" required>
+                            <i class='bx bxs-comment'></i>
+                        </div>
+                        <button type="submit" name="submit_comment" class="btn">Enviar</button>                        
                     </form><br>
-<!-- SEÇÃO DE POSTS -->
                     <ul class="comments" id="comments_<?php echo $row['POST_ID']; ?>">
-<!-- SEÇÃO DE COMENTÁRIOS -->
                         <?php
                         $postId = $row['POST_ID'];
                         $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME FROM COMENTARIO c JOIN USUARIO u ON c.USER_ID = u.USER_ID WHERE c.POST_ID = '$postId'";
@@ -73,15 +75,15 @@ include("conexao.php");
                         }
                         ?>
                     </ul>
-<!-- SEÇÃO DE COMENTÁRIOS -->
                 </article>
-        <?php
+            <?php
+                }
             }
-        }
-        ?>
-    </section>
+            ?>
+        </section>
+    </div>
     <script>
-        // requisição AJAX;
+        // Requisição AJAX para enviar comentários
         $(document).ready(function() {
             $('form').submit(function(e) {
                 e.preventDefault(); // Previne a submissão padrão do formulário
