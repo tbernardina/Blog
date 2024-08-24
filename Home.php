@@ -10,7 +10,6 @@ include("conexao.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Fórum</title>
     <link rel="stylesheet" href="css_home.css">
-    <link rel="stylesheet" href="css_home.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="ScriptNavbar.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
@@ -29,10 +28,6 @@ include("conexao.php");
             <a class='link_navbar' href="Login.html">Entrar</a>
             <a class='link_navbar' href="CriarPost.php">Criar Post</a>
             <a class='link_navbar' href="Logout.php">Sair</a>
-            <a class='link_navbar' href="Home.php">Home</a>
-            <a class='link_navbar' href="Login.html">Entrar</a>
-            <a class='link_navbar' href="CriarPost.php">Criar Post</a>
-            <a class='link_navbar' href="Logout.php">Sair</a>
     </nav>
 <!-- SEÇÃO DE POSTS -->
     <section>
@@ -41,19 +36,7 @@ include("conexao.php");
         // Consulta para obter os posts do banco de dados
         $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
         $result = $conn->query($slct);
-<!-- SEÇÃO DE POSTS -->
-    <section>
-        <h2>Últimas postagens</h2>
-        <?php
-        // Consulta para obter os posts do banco de dados
-        $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
-        $result = $conn->query($slct);
 
-        if ($result->num_rows > 0) {
-            // Loop através de cada linha do resultado da consulta
-            while ($row = $result->fetch_assoc()) {
-
-        ?>
         if ($result->num_rows > 0) {
             // Loop através de cada linha do resultado da consulta
             while ($row = $result->fetch_assoc()) {
@@ -66,9 +49,6 @@ include("conexao.php");
                         <?php // Código de exibição das imagens anexadas
                             $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
                             if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
-                        <?php // Código de exibição das imagens anexadas
-                            $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
-                            if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
                         ?>
                     </div>
                     <p><?php echo $row['CONTEUDO']; ?></p>
@@ -77,13 +57,9 @@ include("conexao.php");
                         <input type="hidden" name="postId" value="<?php echo $row['POST_ID']; ?>">
                         <input type="text" name="conteudo_C" placeholder="Comente aqui">
                         <input type="submit" name="submit_comment" value="Enviar">                        
-                        <input type="text" name="conteudo_C" placeholder="Comente aqui">
-                        <input type="submit" name="submit_comment" value="Enviar">                        
                     </form><br>
 <!-- SEÇÃO DE POSTS -->
-<!-- SEÇÃO DE POSTS -->
                     <ul class="comments" id="comments_<?php echo $row['POST_ID']; ?>">
-<!-- SEÇÃO DE COMENTÁRIOS -->
 <!-- SEÇÃO DE COMENTÁRIOS -->
                         <?php
                         $postId = $row['POST_ID'];
@@ -98,20 +74,13 @@ include("conexao.php");
                         ?>
                     </ul>
 <!-- SEÇÃO DE COMENTÁRIOS -->
-<!-- SEÇÃO DE COMENTÁRIOS -->
                 </article>
         <?php
             }
         }
         ?>
     </section>
-        <?php
-            }
-        }
-        ?>
-    </section>
     <script>
-        // requisição AJAX;
         // requisição AJAX;
         $(document).ready(function() {
             $('form').submit(function(e) {
