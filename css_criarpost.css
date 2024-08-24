@@ -11,6 +11,10 @@ header {
     padding: 10px 20px;
 }
 
+h2{
+    text-align: center;
+}
+
 section {
     max-width: 600px;
     margin: 20px auto;
