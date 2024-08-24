@@ -16,39 +16,35 @@ include("conexao.php");
 </head>
 
 <body>
-    <header>
-        <h1>Fórum</h1>
-    </header>
-    <nav> <!-- barra de navegação -->
-        <div class='cent_nav'>
-            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
-            <strong class='nome_navbar'> Bem vindo, <?php echo $_SESSION['nome'] ?></strong>
-        </div>
+    <header class="header">
+        <a href="Home.php" class="logo">Fórum</a>
+        <nav class="navbar">
             <a class='link_navbar' href="Home.php">Home</a>
             <a class='link_navbar' href="Login.html">Entrar</a>
             <a class='link_navbar' href="CriarPost.php">Criar Post</a>
             <a class='link_navbar' href="Logout.php">Sair</a>
-    </nav>
-<!-- SEÇÃO DE POSTS -->
+        </nav>
+    </header>
+
+    <!-- SEÇÃO DE POSTS -->
     <section>
         <h2>Últimas postagens</h2>
         <?php
-        // Consulta para obter os posts do banco de dados
         $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
         $result = $conn->query($slct);
 
         if ($result->num_rows > 0) {
-            // Loop através de cada linha do resultado da consulta
             while ($row = $result->fetch_assoc()) {
-
         ?>
                 <article>
                     <h3><?php echo $row['TITULO']; ?></h3>
                     <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
                     <div class="ImagemAnexo">
-                        <?php // Código de exibição das imagens anexadas
-                            $CaminhoImagem = "Imagens/".$row['ANEXOS']; 
-                            if(file_exists("Imagens/".$row['ANEXOS'])){echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";};
+                        <?php 
+                        $CaminhoImagem = "Imagens/" . $row['ANEXOS'];
+                        if (file_exists("Imagens/" . $row['ANEXOS'])) {
+                            echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";
+                        };
                         ?>
                     </div>
                     <p><?php echo $row['CONTEUDO']; ?></p>
@@ -56,11 +52,11 @@ include("conexao.php");
                     <form method="post" action="CriarComentário.php">
                         <input type="hidden" name="postId" value="<?php echo $row['POST_ID']; ?>">
                         <input type="text" name="conteudo_C" placeholder="Comente aqui">
-                        <input type="submit" name="submit_comment" value="Enviar">                        
+                        <input type="submit" name="submit_comment" value="Enviar">
                     </form><br>
-<!-- SEÇÃO DE POSTS -->
+                    <!-- SEÇÃO DE POSTS -->
                     <ul class="comments" id="comments_<?php echo $row['POST_ID']; ?>">
-<!-- SEÇÃO DE COMENTÁRIOS -->
+                        <!-- SEÇÃO DE COMENTÁRIOS -->
                         <?php
                         $postId = $row['POST_ID'];
                         $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME FROM COMENTARIO c JOIN USUARIO u ON c.USER_ID = u.USER_ID WHERE c.POST_ID = '$postId'";
@@ -73,7 +69,7 @@ include("conexao.php");
                         }
                         ?>
                     </ul>
-<!-- SEÇÃO DE COMENTÁRIOS -->
+                    <!-- SEÇÃO DE COMENTÁRIOS -->
                 </article>
         <?php
             }
@@ -81,10 +77,9 @@ include("conexao.php");
         ?>
     </section>
     <script>
-        // requisição AJAX;
         $(document).ready(function() {
             $('form').submit(function(e) {
-                e.preventDefault(); // Previne a submissão padrão do formulário
+                e.preventDefault();
                 var form = $(this);
                 var postId = form.find('input[name="postId"]').val();
                 var conteudo_C = form.find('input[name="conteudo_C"]').val();
@@ -95,11 +90,11 @@ include("conexao.php");
                     data: {
                         postId: postId,
                         conteudo_C: conteudo_C,
-                        submit_comment: true // Para identificar que o comentário está sendo enviado
+                        submit_comment: true
                     },
                     success: function(response) {
                         $('#comments_' + postId).append('<li>' + conteudo_C + ' - Você</li>');
-                        form.find('input[name="conteudo_C"]').val(''); // Limpa o campo de texto
+                        form.find('input[name="conteudo_C"]').val('');
                     },
                     error: function(xhr, status, error) {
                         alert("Houve um erro ao enviar o comentário. Tente novamente.");
@@ -109,4 +104,5 @@ include("conexao.php");
         });
     </script>
 </body>
+
 </html>

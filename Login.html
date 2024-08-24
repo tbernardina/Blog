@@ -7,22 +7,22 @@
     <title>Login</title>
     <link rel="stylesheet" href="css_login.css">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <script src="ScriptNavbar.js"></script>
     <script src="ScriptMensagem.js"></script>
 </head>
+
 <body>
-    <header class="header_login">
-        <h1>Fórum</h1>
+    <header class="header">
+        <a href="#" class="logo">Fórum</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Entrar</a>
+        </nav>
     </header>
-    <nav class="nav_login"> <!-- barra de navegação -->
-        <div class='cent_nav'>
-            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
-        </div>
-            <a class='link_navbar' href="Home.php">Home</a>
-            <a class='link_navbar' href="Login.html">Entrar</a>
-    </nav>
     <div class="Formulario">
         <div class="wrapper">
             <form id="loginForm" method="post" action="ProcessarLogin.php">
