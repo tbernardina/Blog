@@ -37,8 +37,10 @@ include("conexao.php");
             while ($row = $result->fetch_assoc()) {
         ?>
                 <article>
-                    <h3><?php echo $row['TITULO']; ?></h3>
-                    <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
+                    <div class="TituloPost">
+                        <h3><?php echo $row['TITULO']; ?></h3>
+                        <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
+                    </div>
                     <div class="ImagemAnexo">
                         <?php 
                         $CaminhoImagem = "Imagens/" . $row['ANEXOS'];
@@ -76,7 +78,24 @@ include("conexao.php");
         }
         ?>
     </section>
+    <div class="overlay" id="overlay">
+            <img src="" alt="Imagem Ampliada" id="zoomedImage">
+    </div>
     <script>
+        const images = document.querySelectorAll('.ImagemAnexos');
+        const overlay = document.getElementById('overlay');
+        const zoomedImage = document.getElementById('zoomedImage');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                zoomedImage.src = image.src;
+                overlay.style.display = 'flex';
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
         $(document).ready(function() {
             $('form').submit(function(e) {
                 e.preventDefault();
