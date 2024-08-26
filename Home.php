@@ -17,7 +17,7 @@ include("conexao.php");
 
 <body>
     <header class="header">
-        <a href="Home.php" class="logo">Fórum1</a>
+        <a href="Home.php" class="logo">Fórum</a>
         <nav class="navbar">
             <a class='link_navbar' href="Home.php">Home</a>
             <a class='link_navbar' href="Login.html">Entrar</a>
