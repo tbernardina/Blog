@@ -8,71 +8,22 @@
 }
 
 body {
-    background: #f4f4f4;
-    color: #333;
+    background-color: #f4f4f4; /* Cor de fundo padrão */
+    color: #333; /* Cor do texto */
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 20px;
-    background: darkblue;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 200%;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    margin-right: 50px;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-}
-
-.navbar a {
-    font-size: 110%; 
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-right: 15px; 
-    position: relative;
-}
-
-.navbar a:last-child {
-    margin-right: 0;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s ease;
-}
-
-.form-container {
+.container {
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 form {
@@ -83,28 +34,32 @@ form {
 form input[type="text"],
 form textarea {
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
 }
 
-form input[type="submit"] {
-    padding: 10px;
-    background: darkblue;
-    color: #fff;
+form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+form button {
+    padding: 10px 20px;
+    border-radius: 4px;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    background-color: seagreen;
+    color: #fff;
     cursor: pointer;
+    font-size: 16px;
 }
 
-form input[type="submit"]:hover {
-    background: darkred;
+form button:hover {
+    background-color: darkgreen;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
 }
