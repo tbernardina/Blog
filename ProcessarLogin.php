@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include("conexao.php");
 // Verifica o usuário e senha no banco de dados
 if(isset($_POST['nickname']) || isset($_POST['senha'])){
@@ -11,7 +14,7 @@ if(isset($_POST['nickname']) || isset($_POST['senha'])){
         $nickname = $conn->real_escape_string($_POST['nickname']);
         $senha = $conn->real_escape_string($_POST['senha']);
 
-        $select_cadastro = "SELECT * FROM USUARIO WHERE NICKNAME = '$nickname' AND SENHA = '$senha'";
+        $select_cadastro = "SELECT * FROM u210937242_usuario WHERE NICKNAME = '$nickname' AND SENHA = '$senha'";
         $sql_query = $conn->query($select_cadastro) or die("Falha na execução do código SQL: " . $conn->connect_error);
 
         $resultado = $sql_query->num_rows;
@@ -35,3 +38,4 @@ if(isset($_POST['nickname']) || isset($_POST['senha'])){
     }
     $conn->close();
 }
+?>

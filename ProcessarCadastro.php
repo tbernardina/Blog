@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('conexao.php');
 // Inserir usuário no banco de dados
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -7,7 +10,7 @@ include('conexao.php');
         $sobrenome = $_POST['sobrenome'];
         $senha = $_POST['senha'];
 // Código de insert dos usuários cadastrados
-        $insert = "INSERT INTO USUARIO (NOME, SOBRENOME, SENHA, NICKNAME) VALUES ('$nome', '$sobrenome', '$senha', '$nickname')"; // Query de insert das informações do usuário
+        $insert = "INSERT INTO u210937242_usuario (NOME, SOBRENOME, SENHA, NICKNAME) VALUES ('$nome', '$sobrenome', '$senha', '$nickname')"; // Query de insert das informações do usuário
         if ($conn->query($insert) === TRUE) {
             $mensagem = "Usuário cadastrado com sucesso!";
             header("Location: Login.html?MensagemDepuracao= ".urlencode($mensagem));
@@ -19,3 +22,4 @@ include('conexao.php');
 // Código de insert dos usuários cadastrados
         $conn->close();
     }
+?>

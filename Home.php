@@ -30,7 +30,7 @@ include("conexao.php");
     <section>
         <h2>Últimas postagens</h2>
         <?php
-        $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM POSTS p JOIN USUARIO u ON p.USER_ID = u.USER_ID";
+        $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID";
         $result = $conn->query($slct);
 
         if ($result->num_rows > 0) {
@@ -39,7 +39,7 @@ include("conexao.php");
                 <article>
                     <div class="TituloPost">
                         <h3><?php echo $row['TITULO']; ?></h3>
-                        <div><?php echo $row['DATA_PUBLICACAO'] ?></div>
+                        <div class="data"><?php echo $row['DATA_PUBLICACAO'] ?></div>
                     </div>
                     <div class="ImagemAnexo">
                         <?php 
@@ -61,7 +61,7 @@ include("conexao.php");
                         <!-- SEÇÃO DE COMENTÁRIOS -->
                         <?php
                         $postId = $row['POST_ID'];
-                        $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME FROM COMENTARIO c JOIN USUARIO u ON c.USER_ID = u.USER_ID WHERE c.POST_ID = '$postId'";
+                        $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME FROM u210937242_comentario c JOIN u210937242_usuario u ON c.USER_ID = u.USER_ID WHERE c.POST_ID = '$postId'";
                         $result_coment = $conn->query($slct_coment);
 
                         if ($result_coment->num_rows > 0) {
