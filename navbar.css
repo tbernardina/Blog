@@ -1,38 +1,144 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-* {
+body {
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 10px;
-    background: darkblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 150%;
+header {
+    background-color: darkblue;
     color: #fff;
-    text-decoration: none;
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
     font-weight: 700;
-    order: 2; 
+    color: darkblue;
+    margin-bottom: 20px;
+}
+
+section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: darkblue;
+}
+
+input[type="text"],
+textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="submit"] {
+    background-color: darkblue;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #004080;
+}
+
+#MensagemDepuracao {
+    text-align: center;
+    margin-top: 10px;
+    color: darkblue;
+    font-weight: 500;
+}
+
+.anexos {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.anexos input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.anexos label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.anexos input[type="file"]:hover + label {
+    background-color: #004080;
+}
+
+.anexos input[type="file"]:focus + label {
+    outline: 2px solid #00f;
+    outline-offset: 2px;
+}
+
+.nome_navbar {
+    font-size: 100%;
+    color: #fff;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.link_navbar {
+    font-size: 90%;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 15px;
+    position: relative;
 }
 
 .navbar {
     display: flex;
-    justify-content: flex-start; 
     align-items: center;
-    order: 1; 
+    justify-content: flex-start; 
 }
 
 .navbar a {
@@ -40,12 +146,12 @@
     color: #fff;
     font-weight: 500;
     text-decoration: none;
-    margin-right: 10px;
-    position: relative;
+    padding-left: 15px; 
+    padding-right: 15px; 
 }
 
-.navbar a:last-child {
-    margin-right: 0;
+.navbar a:first-child {
+    padding-left: 0; 
 }
 
 .navbar a:hover::before {
@@ -61,9 +167,4 @@
     height: 2px;
     background: #fff;
     transition: width 0.3s ease;
-}
-
-.wrapper,
-section {
-    margin-top: 80px;
 }
