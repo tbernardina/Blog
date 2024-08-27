@@ -76,4 +76,12 @@ section {
     .navbar a{
         display: none;
     }
+
+    .navbar{
+        flex-direction: column;
+    }
+
+    .link_navbar.show{
+        display: flex;
+    }
 }
