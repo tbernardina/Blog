@@ -1,34 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
 header {
-    background-color: darkblue;
+    background-color: #333;
     color: #fff;
-    padding: 15px 20px;
-    text-align: center;
-    font-weight: 600;
+    padding: 10px 20px;
 }
 
-h2 {
+h2{
     text-align: center;
-    font-weight: 700;
-    color: darkblue;
-    margin-bottom: 20px;
 }
 
 section {
     max-width: 600px;
     margin: 20px auto;
-    padding: 25px;
+    padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -38,45 +31,38 @@ form {
 
 label {
     margin-bottom: 5px;
-    font-weight: 500;
-    color: darkblue;
 }
 
 input[type="text"],
 textarea {
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 3px;
 }
 
 textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 100px;
 }
 
 input[type="submit"] {
-    background-color: darkblue;
+    background-color: #333;
     color: #fff;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    border-radius: 3px;
 }
 
 input[type="submit"]:hover {
-    background-color: #004080;
+    background-color: #555;
 }
 
-#MensagemDepuracao {
+#MensagemDepuracao{
     text-align: center;
-    margin-top: 10px;
-    color: darkblue;
-    font-weight: 500;
+    margin-top: 5px;
+
 }
 
 .anexos {
@@ -85,7 +71,6 @@ input[type="submit"]:hover {
     padding: 5px;
     align-items: center;
     text-align: center;
-    margin-bottom: 15px;
 }
 
 .anexos input[type="file"] {
@@ -101,57 +86,18 @@ input[type="submit"]:hover {
 .anexos label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: darkblue;
+    background-color: #333;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
 }
 
 .anexos input[type="file"]:hover + label {
-    background-color: #004080;
+    background-color: #444;
 }
 
 .anexos input[type="file"]:focus + label {
     outline: 2px solid #00f;
     outline-offset: 2px;
-}
-
-.nome_navbar {
-    font-size: 100%;
-    color: #fff;
-    font-weight: 600;
-    margin-right: 20px;
-}
-
-.link_navbar {
-    font-size: 90%;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 15px;
-    position: relative;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-}
-
-.navbar a:hover::before {
-    width: 100%;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s ease;
 }
