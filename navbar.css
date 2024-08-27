@@ -12,33 +12,35 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 20px;
+    padding: 10px 10px;
     background: darkblue;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
 .logo {
-    font-size: 200%;
+    font-size: 150%;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    margin-right: 50px;
+    order: 2; 
 }
 
 .navbar {
     display: flex;
+    justify-content: flex-start; 
     align-items: center;
+    order: 1; 
 }
 
 .navbar a {
-    font-size: 110%; 
+    font-size: 90%;
     color: #fff;
     font-weight: 500;
     text-decoration: none;
-    margin-right: 15px; 
+    margin-right: 10px;
     position: relative;
 }
 
@@ -47,10 +49,6 @@
 }
 
 .navbar a:hover::before {
-    width: 100%;
-}
-
-.navbar a::before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -63,5 +61,5 @@
 
 .wrapper,
 section {
-    margin-top: 100px;
+    margin-top: 80px;
 }
