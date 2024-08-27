@@ -94,6 +94,6 @@ section {
     }
     
     #menu-toggle {
-        display: inline-block;
+        display: inline;
     }
 }
