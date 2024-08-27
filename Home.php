@@ -19,7 +19,7 @@ include("conexao.php");
     <header class="header">
         <a href="Home.php" class="logo">Fórum</a>
         <nav class="navbar">
-            <strong>Bem vindo, <?php echo $_SESSION['nome'];?></strong>
+            <strong class="nome_navbar">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
             <a class='link_navbar' href="Home.php">Home</a>
             <a class='link_navbar' href="Login.html">Entrar</a>
             <a class='link_navbar' href="CriarPost.php">Criar Post</a>

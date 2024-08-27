@@ -67,6 +67,12 @@
     transition: width 0.3s ease;
 }
 
+.nome_navbar{
+    color: #fff;
+    padding: 10px;
+
+}
+
 .wrapper,
 section {
     margin-top: 100px;
