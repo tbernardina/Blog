@@ -24,6 +24,7 @@ include("conexao.php");
             <a class='link_navbar' href="CriarPost.php">Criar Post</a>
             <a class='link_navbar' href="Logout.php">Sair</a>
         </nav>
+        <strong>Bem vindo, <?php echo $_SESSION['nickname']?></strong>
     </header>
 
     <!-- SEÇÃO DE POSTS -->
