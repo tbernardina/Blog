@@ -11,7 +11,7 @@ header {
     padding: 10px 20px;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -47,22 +47,22 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #333;
+    background-color: #007bff; 
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 3px;
+    font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #555;
+    background-color: #0056b3; 
 }
 
-#MensagemDepuracao{
+#MensagemDepuracao {
     text-align: center;
     margin-top: 5px;
-
 }
 
 .anexos {
@@ -86,7 +86,7 @@ input[type="submit"]:hover {
 .anexos label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #007bff; 
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -94,7 +94,7 @@ input[type="submit"]:hover {
 }
 
 .anexos input[type="file"]:hover + label {
-    background-color: #444;
+    background-color: #0056b3; 
 }
 
 .anexos input[type="file"]:focus + label {
