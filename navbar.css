@@ -72,16 +72,28 @@ section {
     margin-top: 100px;
 }
 
+#menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 @media screen and (max-width: 635px){
     .navbar a{
         display: none;
     }
-
+    
     .navbar{
         flex-direction: column;
     }
 
     .link_navbar.show{
         display: flex;
+    }
+    
+    #menu-toggle {
+        display: inline-block;
     }
 }
