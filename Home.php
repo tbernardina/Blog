@@ -43,7 +43,7 @@ $data_br = $query->fetch_assoc();
                 <article>
                     <div class="TituloPost">
                         <h3><?php echo $row['TITULO']; ?></h3>
-                        <div class="data"><?php echo $slct_data['DATA_PUBLICACAO_BR'] ?></div>
+                        <div class="data"><?php echo $row['DATA_PUBLICACAO'] ?></div>
                     </div>
                     <div class="ImagemAnexo">
                         <?php 
