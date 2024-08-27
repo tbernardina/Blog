@@ -47,6 +47,7 @@
 }
 
 .nome_navbar {
+    display: inline;
     margin-right: 10px;
     font-size: 110%; 
     color: #fff; 
