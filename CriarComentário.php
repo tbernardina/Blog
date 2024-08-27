@@ -9,6 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['conteudo_C'])) {
     $insert_coment = "INSERT INTO u210937242_comentario (POST_ID, USER_ID, CONTEUDO) VALUES ('$IDPOST', '$AUTOR', '$CONTEUDO')";
     $conn->query($insert_coment);
 
-    header("Location: " . "home.php");
+    header("Location: " . "Home.php");
     exit();
 }
