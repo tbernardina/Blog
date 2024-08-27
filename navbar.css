@@ -80,7 +80,7 @@ section {
     color: white;
     cursor: pointer;
 }
-@media screen and (max-width: 635px){
+@media screen and (max-width: 680px){
     .navbar a{
         display: none;
     }
