@@ -22,7 +22,6 @@ include("start.php");
         <a class="link_navbar" href="Logout.php">Sair</a>
     </nav>
 </header>
-
     <section>
         <h2>Novo Post</h2>
         <form id="postForm" method="POST" action="ProcessarPost.php" enctype="multipart/form-data">
