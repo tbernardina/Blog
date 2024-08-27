@@ -1,9 +1,6 @@
 <?php
 include("start.php");
 include("conexao.php");
-$slct_data = "SELECT CONVERT_TZ(DATA_PUBLICAÇÃO, @@global.time_zone, 'America/Sao_Paulo') AS DATA_PUBLICACAO_BR FROM u210937242_posts";
-$query = $conn->query($slct_data);
-$data_br = $query->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
