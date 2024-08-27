@@ -1,103 +1,65 @@
-body {
-    font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-h2{
-    text-align: center;
-}
-
-section {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-input[type="submit"]:hover {
-    background-color: #555;
-}
-
-#MensagemDepuracao{
-    text-align: center;
-    margin-top: 5px;
-
-}
-
-.anexos {
-    position: relative;
-    display: inline-block;
-    padding: 5px;
-    align-items: center;
-    text-align: center;
-}
-
-.anexos input[type="file"] {
-    position: absolute;
-    left: 0;
+.header {
+    position: fixed;
     top: 0;
-    opacity: 0;
-    cursor: pointer;
+    left: 0;
     width: 100%;
-    height: 100%;
+    padding: 10px 10px;
+    background: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
-.anexos label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
+.logo {
+    font-size: 150%;
     color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    order: 2; 
 }
 
-.anexos input[type="file"]:hover + label {
-    background-color: #444;
+.navbar {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    order: 1; 
 }
 
-.anexos input[type="file"]:focus + label {
-    outline: 2px solid #00f;
-    outline-offset: 2px;
+.navbar a {
+    font-size: 90%;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+}
+
+.navbar a:last-child {
+    margin-right: 0;
+}
+
+.navbar a:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.wrapper,
+section {
+    margin-top: 80px;
 }
