@@ -29,7 +29,6 @@
 }
 
 .navbar {
-    display: flex;
     align-items: center;
 }
 
@@ -82,12 +81,12 @@ section {
     cursor: pointer;
 }
 @media screen and (max-width: 680px){
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
     .navbar a{
         display: none;
-    }
-    
-    .navbar{
-        flex-direction: column;
     }
 
     .link_navbar.show{

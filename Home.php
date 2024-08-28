@@ -21,10 +21,12 @@ include("conexao.php");
         <nav class="navbar">
             <strong class="nome_navbar">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
             <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
-            <a class='link_navbar' href="Home.php">Home</a>
-            <a class='link_navbar' href="Login.html">Entrar</a>
-            <a class='link_navbar' href="CriarPost.php">Criar Post</a>
-            <a class='link_navbar' href="Logout.php">Sair</a>
+            <div class="links">
+                <a class='link_navbar' href="Home.php">Home</a>
+                <a class='link_navbar' href="Login.html">Entrar</a>
+                <a class='link_navbar' href="CriarPost.php">Criar Post</a>
+                <a class='link_navbar' href="Logout.php">Sair</a>
+            </div>
         </nav>
     </header>
 
