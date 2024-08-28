@@ -83,11 +83,11 @@ section {
     }
     .link_navbar{
         display: none;
-        text-align: end;
     }
 
     .link_navbar.show{
         display: flex;
+        text-align: end;
     }
     
     #menu-toggle {
