@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-.navbar a {
+.link_navbar {
     font-size: 110%; 
     color: #fff;
     font-weight: 500;
@@ -43,13 +43,6 @@
 
 .navbar a:last-child {
     margin-right: 0;
-}
-
-.nome_navbar {
-    display: inline;
-    margin-right: 10px;
-    font-size: 110%; 
-    color: #fff; 
 }
 
 .navbar a:hover::before {
