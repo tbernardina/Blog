@@ -7,9 +7,18 @@
     font-family: "Poppins", sans-serif;
 }
 
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+  }
+  
 body {
     min-height: 100vh;
-    background: url('Imagens/pxfuel.jpg') no-repeat;
+    background: url('Imagens/720499.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }

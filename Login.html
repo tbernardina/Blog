@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css_login.css">
     <link rel="stylesheet" href="navbar.css">
-
+    <link rel="stylesheet" href="css_login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <script src="ScriptNavbar.js"></script>
@@ -15,16 +14,24 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="Home.php" class="logo">Fórum</a>
-        <nav class="navbar">
-            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
-            <div class="links">
-                <a class='link_navbar' href="Home.php">Home</a>
-                <a class='link_navbar' href="Login.html">Entrar</a>
-            </div>
+    <header>
+        <nav>
+          <a class="logo" href="/">Forúm</a>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
+
+      <script src="mobile-navbar.js"></script>  
     <div class="Formulario">
         <div class="wrapper">
             <form id="loginForm" method="post" action="ProcessarLogin.php">

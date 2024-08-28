@@ -1,8 +1,8 @@
 <?php
 // Arquivo somente para conexão com o banco de dados
 $servername = "localhost";
-$username = "u210937242_TJAdmin";
-$password = "Thiagoreis2019_";
+$username = "root";
+$password = "";
 $database = "u210937242_Projeto0";
 
 $conn = new mysqli($servername, $username, $password, $database);

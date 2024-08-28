@@ -7,8 +7,8 @@ include("start.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Post</title>
-    <link rel="stylesheet" href="css_criarpost.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="css_criarpost.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <script src="ScriptNavbar.js"></script>
     <script src="ScriptMensagem.js"></script>
@@ -17,12 +17,7 @@ include("start.php");
     <header class="header">
         <a href="Home.php" class="logo">Fórum</a>
         <nav class="navbar">
-            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
             <div class="links">
-                <strong class="link_navbar nome">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
-                <a class='link_navbar' href="Home.php">Home</a>
-                <a class='link_navbar' href="Login.html">Entrar</a>
-                <a class='link_navbar' href="CriarPost.php">Criar Post</a>
                 <a class='link_navbar' href="Logout.php">Sair</a>
             </div>
         </nav>
