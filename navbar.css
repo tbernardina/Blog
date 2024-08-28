@@ -74,6 +74,9 @@ section {
     cursor: pointer;
 }
 @media screen and (max-width: 680px){
+    .link_navbar.nome{
+        font-size: 80%;
+    }
     .links{
         display: flex;
         flex-direction: column;

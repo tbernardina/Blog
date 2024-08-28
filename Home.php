@@ -21,7 +21,7 @@ include("conexao.php");
         <nav class="navbar">
             <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
             <div class="links">
-                <strong class="link_navbar">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
+                <strong class="link_navbar nome">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
                 <a class='link_navbar' href="Home.php">Home</a>
                 <a class='link_navbar' href="Login.html">Entrar</a>
                 <a class='link_navbar' href="CriarPost.php">Criar Post</a>
