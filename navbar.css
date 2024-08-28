@@ -87,6 +87,7 @@ section {
 
     .link_navbar.show{
         display: flex;
+        justify-content: end;
         text-align: end;
     }
     
