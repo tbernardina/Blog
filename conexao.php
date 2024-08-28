@@ -1,7 +1,7 @@
 <?php
 // Arquivo somente para conexão com o banco de dados
 $servername = "localhost";
-$username = "root";
+$username = "u210937242_";
 $password = "";
 $database = "projeto0";
 
