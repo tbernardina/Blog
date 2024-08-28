@@ -85,7 +85,7 @@ section {
         display: flex;
         flex-direction: column;
     }
-    .navbar a{
+    .link_navbar{
         display: none;
     }
 
