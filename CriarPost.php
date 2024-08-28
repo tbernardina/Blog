@@ -14,14 +14,19 @@ include("start.php");
     <script src="ScriptMensagem.js"></script>
 </head>
 <body>
-<header class="header">
-    <a href="Home.php" class="logo">Fórum</a>
-    <nav class="navbar">
-        <strong class="nome_navbar">Bem vindo, <?php echo $_SESSION['nome']; ?></strong>
-        <a class="link_navbar" href="Home.php">Home</a>
-        <a class="link_navbar" href="Logout.php">Sair</a>
-    </nav>
-</header>
+    <header class="header">
+        <a href="Home.php" class="logo">Fórum</a>
+        <nav class="navbar">
+            <i id='menu-toggle' class='bx bx-menu' onclick='showMenus()'></i>
+            <div class="links">
+                <strong class="link_navbar nome">Bem vindo, <?php echo $_SESSION['nome'];?></strong>
+                <a class='link_navbar' href="Home.php">Home</a>
+                <a class='link_navbar' href="Login.html">Entrar</a>
+                <a class='link_navbar' href="CriarPost.php">Criar Post</a>
+                <a class='link_navbar' href="Logout.php">Sair</a>
+            </div>
+        </nav>
+    </header>
 
     <section>
         <h2>Novo Post</h2>
