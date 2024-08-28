@@ -90,6 +90,7 @@ section {
     }
     
     #menu-toggle {
-        display: inline;
+        display: block;
+        text-align: center;
     }
 }
