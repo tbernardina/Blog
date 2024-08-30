@@ -7,35 +7,57 @@
     font-family: "Poppins", sans-serif;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: url('Imagens/720499.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden; 
+}
+
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     background: #23232e;
     height: 8vh;
-  }
-  
-body {
-    background: url('Imagens/720499.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+}
+
+nav .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav .nav-list li {
+    letter-spacing: 3px;
 }
 
 .wrapper {
-    width: 500px; 
+    width: 90%; 
+    max-width: 500px; 
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 15px rgba(0, 0, 0, .3);
     color: #fff;
-    border-radius: 12px; 
-    padding: 40px 50px; 
-    position: relative; 
+    border-radius: 12px;
+    padding: 40px 50px;
+    position: relative;
+    margin: 0 auto; 
 }
 
 .wrapper h1 {
-    font-size: 40px; 
+    font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -51,9 +73,9 @@ body {
     border: none;
     outline: none;
     background: rgba(255, 255, 255, 0.1);
-    padding: 0 25px; 
-    border-radius: 30px; 
-    font-size: 18px; 
+    padding: 0 25px;
+    border-radius: 30px;
+    font-size: 18px;
     color: #fff;
 }
 
@@ -63,11 +85,11 @@ body {
 
 .input-box i {
     position: absolute;
-    right: 25px; 
+    right: 25px;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
-    font-size: 24px; 
+    font-size: 24px;
 }
 
 .wrapper .btn {
@@ -78,18 +100,18 @@ body {
     border: none;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 15px rgb(0, 0, 0, .1); 
+    box-shadow: 0 0 15px rgb(0, 0, 0, .1);
     cursor: pointer;
-    font-size: 18px; 
+    font-size: 18px;
     color: #333;
     font-weight: 600;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .wrapper .login-link {
-    font-size: 16px; 
+    font-size: 16px;
     text-align: center;
-    margin: 25px 0 20px; 
+    margin: 25px 0 20px;
 }
 
 .wrapper .login-link p a {
@@ -107,51 +129,66 @@ body {
 }
 
 .wrapper .register-link a:visited {
-    color: #fff; 
+    color: #fff;
 }
 
 .wrapper .remember-forgot a {
-    text-decoration: none; 
+    text-decoration: none;
     font-weight: 600;
     padding-left: 5px;
 }
 
 .wrapper .remember-forgot a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .wrapper .register-link a {
-    text-decoration: none; 
-    font-weight: 600; 
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .wrapper .register-link a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
-.register-link{
+
+.register-link {
     font-weight: 600;
     text-align: center;
     padding: 10px;
 }
-#MensagemDepuracao{
+
+#MensagemDepuracao {
     font-weight: 600;
     text-align: center;
 }
-.Formulario{
+
+.Formulario {
     display: flex;
     justify-content: center;
-    padding-top: 5% ;
+    padding-top: 5%;
 }
 
-.header_login{
+.header_login {
     background: transparent;
 }
-.nav_login{
+
+.nav_login {
     background: transparent;
 }
 
 @media screen and (max-width: 649px) {
-    .link_navbar.show{
-        background: transparent;
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-list li {
+        margin: 10px 0; 
     }
 }
