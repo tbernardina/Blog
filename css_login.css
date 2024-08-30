@@ -17,7 +17,7 @@ nav {
   }
   
 body {
-    min-height: 100vh;
+    min-height: auto;
     background: url('Imagens/720499.jpg') no-repeat;
     background-size: cover;
     background-position: center;
