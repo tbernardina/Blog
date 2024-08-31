@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($anexos) && !empty($anexos['name'])){
         $imagem = strtolower(pathinfo($anexos['name'], PATHINFO_EXTENSION)); //Captura o formato do anexo e verifica se está na lista de formatos válidos
         if($imagem == 'jpg' || $imagem == 'png' || $imagem == 'jpeg') {
-            move_uploaded_file($anexos['tmp_name'], 'imagens/'.$anexos['name']); //Move o anexo para a pasta "imagens"
+            move_uploaded_file($anexos['tmp_name'], 'Imagens/'.$anexos['name']); //Move o anexo para a pasta "imagens"
         }else {
             $mensagem = 'Esse arquivo não foi suportado pelo sistema.';
             header('Location: CriarPost.php?MensagemDepuracao=' . urldecode($mensagem));
