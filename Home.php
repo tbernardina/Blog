@@ -54,7 +54,7 @@ include("conexao.php");
                             $CaminhoImagem = "Imagens/" . $row['ANEXOS'];
                             if (file_exists($CaminhoImagem)) {
                                 echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";
-                            }
+                            }else{echo ' ';};
                             ?>
                         </div>
                         <p><?php echo $row['CONTEUDO']; ?></p>
