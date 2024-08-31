@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Código de anexo de imagens
 // Código de insert dos posts criados
     if (!empty($titulo) && !empty($conteudo)) { // Verifica se tanto o título quanto o conteúdo não estão vazios e faz a inserção do post ao banco de dados
-        $sql = "INSERT INTO u210937242_posts (TITULO, CONTEUDO, ANEXOS, USER_ID) VALUES ('$titulo', '$conteudo', '".$anexos['name']."', '$autor')"; // Query de insert das informações dos posts
+        $sql = "INSERT INTO u210937242_posts (TITULO, CONTEUDO, ANEXOS, USER_ID, DATA_PUBLICACAO) VALUES ('$titulo', '$conteudo', '".$anexos['name']."', '$autor', CONVERT_TZ(NOW(), @@global.time_zone, 'America/Sao_Paulo')git)"; // Query de insert das informações dos posts
         if ($conn->query($sql) === TRUE) {
             header('location: Home.php');
             exit();
