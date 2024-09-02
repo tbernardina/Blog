@@ -38,7 +38,7 @@ include("conexao.php");
         <section>
             <h2>Últimas postagens</h2>
             <?php
-            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID";
+            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID WHERE DATA_PUBLICACAO < CURRENT_DATE ORDER BY DATA_PUBLICACAO DESC";
             $result = $conn->query($slct);
 
             if ($result->num_rows > 0) {
