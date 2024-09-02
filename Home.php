@@ -62,7 +62,7 @@ include("conexao.php");
                         <form method="post" action="CriarComentario.php">
                             <input type="hidden" name="postId" value="<?php echo $row['POST_ID']; ?>">
                             <input type="text" name="conteudo_C" placeholder="Comente aqui">
-                            <input type="submit" name="submit_comment" value="Enviar">
+                            <input type="submit" value="Enviar">
                         </form><br>
                         <!-- SEÇÃO DE COMENTÁRIOS -->
                         <ul class="comments" id="comments_<?php echo $row['POST_ID']; ?>">
