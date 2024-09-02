@@ -61,7 +61,7 @@ include("conexao.php");
                         <p>Autor: <?php echo $row['NOME'] . " " . $row['SOBRENOME']; ?></p>
                         <form method="post" action="CriarComentario.php">
                             <input type="hidden" name="postId" value="<?php echo $row['POST_ID']; ?>">
-                            <input type="text" name="conteudo_C" placeholder="Comente aqui">
+                            <input type="text" name="conteudo_C" placeholder="Comente aqui" required>
                             <input type="submit" value="Enviar">
                         </form><br>
                         <!-- SEÇÃO DE COMENTÁRIOS -->
