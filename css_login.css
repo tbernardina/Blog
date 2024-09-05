@@ -166,6 +166,12 @@ body {
 }
 
 @media screen and (max-width: 649px) {
+    .wrapper {
+        padding: 20px; 
+    }
+}
+
+@media screen and (max-width: 649px) {
     .link_navbar.show {
         background: transparent;
     }
