@@ -3,7 +3,7 @@
         <section>
             <h2>Últimas postagens</h2>
             <?php
-            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID WHERE DATA_PUBLICACAO < NOW() ORDER BY DATA_PUBLICACAO DESC";
+            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID WHERE P.USER_ID = " . $_SESSION['id'];
             $result = $conn->query($slct);
 
             if ($result->num_rows > 0) {
