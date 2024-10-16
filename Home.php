@@ -24,11 +24,13 @@ include("conexao.php");
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
+                <div class="line4"></div>
             </div>
             <ul class="nav-list">
                 <li class="welcome-message"><strong>Bem vindo, <?php echo $_SESSION['nome']; ?></strong></li>
                 <li><a href="Login.html">Início</a></li>
                 <li><a href="CriarPost.php">Criar Post</a></li>
+                <li><a href="Perfil.php">Perfil</a></li>
                 <li><a href="Logout.php">Sair</a></li>
             </ul>
         </nav>
