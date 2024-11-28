@@ -1,5 +1,5 @@
 <?php
-include("start.php");
+require("start.php");
 include("conexao.php");
 ?>
 <!DOCTYPE html>
