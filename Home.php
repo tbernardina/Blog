@@ -13,10 +13,11 @@ include("conexao.php");
     <link rel="stylesheet" href="css_home.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+    <!-- Navbar -->
     <header>
         <nav>
             <a class="logo" href="Home.php">Fórum</a>
@@ -28,7 +29,7 @@ include("conexao.php");
             </div>
             <ul class="nav-list">
                 <li class="welcome-message"><strong>Bem vindo, <?php echo $_SESSION['nome']; ?></strong></li>
-                <li><a href="Login.html">Início</a></li>
+                <li><a href="Home.php">Início</a></li>
                 <li><a href="CriarPost.php">Criar Post</a></li>
                 <li><a href="Perfil.php">Perfil</a></li>
                 <li><a href="Logout.php">Sair</a></li>
@@ -36,15 +37,20 @@ include("conexao.php");
                     <form action="buscar.php" method="get">
                         <input type="text" name="q" placeholder="Buscar..." aria-label="Pesquisar">
                         <button type="submit"><i class="bx bx-search"></i></button>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>
+
+    <!-- Conteúdo Principal -->
     <main>
-        <!-- SEÇÃO DE POSTS -->
         <section>
             <h2>Últimas postagens</h2>
             <?php
-            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID WHERE DATA_PUBLICACAO < NOW() ORDER BY DATA_PUBLICACAO DESC";
+            $slct = "SELECT p.*, u.NOME, u.SOBRENOME FROM u210937242_posts p 
+                     JOIN u210937242_usuario u ON p.USER_ID = u.USER_ID 
+                     WHERE DATA_PUBLICACAO < NOW() ORDER BY DATA_PUBLICACAO DESC";
             $result = $conn->query($slct);
 
             if ($result->num_rows > 0) {
@@ -62,7 +68,7 @@ include("conexao.php");
                                 echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";
                             } else {
                                 echo ' ';
-                            };
+                            }
                             ?>
                         </div>
                         <p><?php echo $row['CONTEUDO']; ?></p>
@@ -72,11 +78,14 @@ include("conexao.php");
                             <input type="text" name="conteudo_C" placeholder="Comente aqui" required>
                             <input type="submit" value="Enviar">
                         </form><br>
-                        <!-- SEÇÃO DE COMENTÁRIOS -->
                         <ul class="comments" id="comments_<?php echo $row['POST_ID']; ?>">
                             <?php
                             $postId = $row['POST_ID'];
-                            $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME FROM u210937242_comentario c JOIN u210937242_usuario u ON c.USER_ID = u.USER_ID WHERE c.POST_ID = '$postId'";
+                            $slct_coment = "SELECT c.*, u.NOME, u.SOBRENOME 
+                                            FROM u210937242_comentario c 
+                                            JOIN u210937242_usuario u 
+                                            ON c.USER_ID = u.USER_ID 
+                                            WHERE c.POST_ID = '$postId'";
                             $result_coment = $conn->query($slct_coment);
 
                             if ($result_coment->num_rows > 0) {
@@ -94,9 +103,12 @@ include("conexao.php");
         </section>
     </main>
 
+    <!-- Modal para Zoom da Imagem -->
     <div class="overlay" id="overlay">
         <img src="" alt="Imagem Ampliada" id="zoomedImage">
     </div>
+
+    <!-- Scripts -->
     <script>
         const images = document.querySelectorAll('.ImagemAnexos');
         const overlay = document.getElementById('overlay');
@@ -113,8 +125,8 @@ include("conexao.php");
             overlay.style.display = 'none';
         });
 
-        $(document).ready(function() {
-            $('form').submit(function(e) {
+        $(document).ready(function () {
+            $('form').submit(function (e) {
                 e.preventDefault();
                 var form = $(this);
                 var postId = form.find('input[name="postId"]').val();
@@ -128,11 +140,11 @@ include("conexao.php");
                         conteudo_C: conteudo_C,
                         submit_comment: true
                     },
-                    success: function(response) {
+                    success: function (response) {
                         $('#comments_' + postId).append('<li>' + conteudo_C + ' - Você</li>');
                         form.find('input[name="conteudo_C"]').val('');
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         alert("Houve um erro ao enviar o comentário. Tente novamente.");
                     }
                 });
