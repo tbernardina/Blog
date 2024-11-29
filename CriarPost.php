@@ -16,8 +16,9 @@ include("start.php");
 <body>
     <header class="header">
         <a href="Home.php" class="logo">Fórum</a>
-        <nav class="navbar">
-            <div class="links">
+        <nav class="links">
+            <div class="nav-list">
+                <a class='link_navbar' href="Home.php">Início</a>
                 <a class='link_navbar' href="Logout.php">Sair</a>
             </div>
         </nav>
