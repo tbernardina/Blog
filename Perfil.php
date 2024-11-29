@@ -19,12 +19,20 @@ include("conexao.php");
         <div>
             <label for="nome">Nome:</label>
             <input id="nome" type="text" value='<?php echo $perfil['NOME']; ?>' disabled>
+        </div>
+        <div>
             <label for="sobrenome">Sobrenome:</label>
             <input id="nickname" type="text" value='<?php echo $perfil['SOBRENOME'];?>' disabled>
+        </div>
+        <div>
             <label for="nickname">Usuário:</label>
             <input id="nickname" type="text" placeholder='<?php echo $perfil['NICKNAME']; ?>'>
+        </div>
+        <div>
             <label id="senha" for="senha">Senha:</label>
             <input id="senha" type="text" placeholder="Senha">
+        </div>
+        <div>
             <label id="confirmarSenha" for="senha">Confirmar senha:</label>
             <input id="confirmarSenha" type="text" placeholder="Confirmar senha">
         </div>
