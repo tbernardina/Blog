@@ -32,6 +32,10 @@ include("conexao.php");
                 <li><a href="CriarPost.php">Criar Post</a></li>
                 <li><a href="Perfil.php">Perfil</a></li>
                 <li><a href="Logout.php">Sair</a></li>
+                <li class="search-bar">
+                    <form action="buscar.php" method="get">
+                        <input type="text" name="q" placeholder="Buscar..." aria-label="Pesquisar">
+                        <button type="submit"><i class="bx bx-search"></i></button>
             </ul>
         </nav>
     </header>
@@ -56,7 +60,9 @@ include("conexao.php");
                             $CaminhoImagem = "Imagens/" . $row['ANEXOS'];
                             if (file_exists($CaminhoImagem)) {
                                 echo "<img class='ImagemAnexos' src='$CaminhoImagem' alt='Imagem'>";
-                            }else{echo ' ';};
+                            } else {
+                                echo ' ';
+                            };
                             ?>
                         </div>
                         <p><?php echo $row['CONTEUDO']; ?></p>
