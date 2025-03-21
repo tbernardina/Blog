@@ -2,7 +2,7 @@
 // Arquivo somente para conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
-$password = "reis2004";
+$password = "";
 $database = "portifolio0";
 
 $conn = new mysqli($servername, $username, $password, $database);
