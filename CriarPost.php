@@ -17,10 +17,10 @@ include("start.php");
     <header class="header">
         <a href="Home.php" class="logo">Fórum</a>
         <nav class="links">
-            <div class="nav-list">
-                <a class='link_navbar' href="Home.php">Início</a>
-                <a class='link_navbar' href="Logout.php">Sair</a>
-            </div>
+            <ul class="nav-list">
+                <li><a class='link_navbar' style="font-family'Poppins', sans-serif" href="Home.php">Início</a></li>
+                <li><a class='link_navbar' href="Logout.php">Sair</a></li>
+            </ul>
         </nav>
     </header>
 
