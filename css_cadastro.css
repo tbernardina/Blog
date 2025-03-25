@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+/* ESTILIZAÇÃO NA BASE DA PÁGINA */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +18,9 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+/* ESTILIZAÇÃO NA BASE DA PÁGINA */
+/* ESTILIZAÇÃO POR CLASSES DA PÁGINA */
 
 .wrapper {
     width: 500px; 
@@ -96,3 +101,5 @@ body {
 .wrapper .login-link p a:hover {
     text-decoration: underline;
 }
+
+/* ESTILIZAÇÃO POR CLASSES DA PÁGINA */

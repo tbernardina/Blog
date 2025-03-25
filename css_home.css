@@ -1,20 +1,8 @@
+/* ESTILIZAÇÃO NA BASE DA PÁGINA */
+
 nav {
     font-family: 'Poppins', sans-serif;
-  }
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: seagreen;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
 }
-
 
 section {
     padding: 20px 10%;
@@ -25,12 +13,7 @@ h2 {
     margin-bottom: 20px;
     font-size: 24px;
 }
-.TituloPost{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-}
+
 article {
     margin-bottom: 40px;
     padding: 20px;
@@ -45,15 +28,6 @@ article h3 {
 article p {
     margin-bottom: 10px;
     line-height: 1.6;
-}
-
-.comments {
-    list-style-type: none;
-}
-
-.comments li {
-    margin-bottom: 8px;
-    font-size: 14px;
 }
 
 form {
@@ -81,6 +55,38 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: darkgreen;
+}
+
+/* ESTILIZAÇÃO NA BASE DA PÁGINA */
+/* ESTILIZAÇÃO POR CLASSES DA PÁGINA */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: seagreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.TituloPost{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.comments {
+    list-style-type: none;
+}
+
+.comments li {
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
 .welcome-message { 
@@ -111,9 +117,14 @@ form input[type="submit"]:hover {
     max-height: 80%;
 }
 
+/* ESTILIZAÇÃO POR CLASSES DA PÁGINA */
+/* ESTILIZAÇÃO CONDICIONAL */
+
 @media screen and (max-width: 402px){
     .TituloPost{
         flex-wrap: wrap;
         justify-content: center;
     }
 }
+
+/* ESTILIZAÇÃO CONDICIONAL */
