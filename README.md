@@ -19,24 +19,41 @@ Projeto de fórum simples para postagem, comentário e interação entre usuári
 
 ## 🗂️ Estrutura de Arquivos
 
-├── Login.html             # Página de login
-├── Cadastro.html          # Página de registro de usuário
-├── Home.php               # Página principal com listagem de posts
-├── CriarPost.php          # Formulário para criação de nova postagem
-├── CriarComentario.php    # Processa comentários em posts
-├── ProcessarLogin.php     # Validação do login
-├── ProcessarCadastro.php  # Validação do cadastro
-├── ProcessarPost.php      # Processa criação/edição de posts
-├── Logout.php             # Script para logout do usuário
-├── conexao.php            # Conexão com banco de dados MySQL
-├── start.php              # Arquivo para iniciar sessões e configurações gerais
-├── ScriptNavbar.js        # Script para navegação responsiva (barra fixa)
-├── mobile-navbar.js       # Script para menu móvel responsivo
-├── ScriptMensagem.js      # Script para exibir mensagens de feedback na interface
-├── u210937242_Projeto0.sql# Script SQL para criação das tabelas e dados iniciais do banco
-├── css/                   # Pasta com arquivos CSS para estilização
-├── js/                    # Pasta com arquivos JS para interatividade
-└── assets/                # Imagens, ícones e outros recursos estáticos
+├── Login.html              # Página de login,
+
+├── Cadastro.html           # Página de registro de usuário,
+
+├── Home.php                # Página principal com listagem de posts,
+
+├── CriarPost.php           # Formulário para criação de nova postagem,
+
+├── CriarComentario.php     # Processa comentários em posts,
+
+├── ProcessarLogin.php      # Validação do login,
+
+├── ProcessarCadastro.php   # Validação do cadastro,
+
+├── ProcessarPost.php       # Processa criação/edição de posts,
+
+├── Logout.php              # Script para logout do usuário,
+
+├── conexao.php             # Conexão com banco de dados MySQL,
+
+├── start.php               # Arquivo para iniciar sessões e configurações gerais,
+
+├── ScriptNavbar.js         # Script para navegação responsiva (barra fixa),
+
+├── mobile-navbar.js        # Script para menu móvel responsivo,
+
+├── ScriptMensagem.js       # Script para exibir mensagens de feedback na interface,
+
+├── u210937242_Projeto0.sql # Script SQL para criação das tabelas e dados iniciais do banco,
+
+├── css/                    # Pasta com arquivos CSS para estilização,
+
+├── js/                     # Pasta com arquivos JS para interatividade,
+
+└── assets/                 # Imagens, ícones e outros recursos estáticos.
 
 
 ---
