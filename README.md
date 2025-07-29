@@ -1,6 +1,6 @@
 # Fórum - Blog de Discussão
 
-Projeto de fórum simples para postagem, comentário e interação entre usuários, desenvolvido com PHP, MySQL, HTML, CSS e JavaScript.
+Projeto de fórum simples para postagem, comentário e interação entre usuários, desenvolvido com PHP, MySQL, HTML, CSS e JavaScript. 
 
 ---
 
@@ -60,7 +60,7 @@ Projeto de fórum simples para postagem, comentário e interação entre usuári
 
 ## 💻 Tecnologias Utilizadas
 
-- PHP 7.x
+- PHP 7
 - MySQL / MariaDB
 - HTML5
 - CSS3
@@ -125,9 +125,5 @@ Este projeto está licenciado sob a Licença Apache 2.0. Veja o arquivo LICENSE 
 
 ## 📝 Contato
 
-Thiago Bernardina — tbernardina@example.com  
+Thiago Bernardina — trdallabernardina@gmail.com  
 GitHub: https://github.com/tbernardina
-
----
-
-Se precisar de algo mais, ajuda para melhorar o projeto ou expandir funcionalidades, só avisar!
