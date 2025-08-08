@@ -8,6 +8,7 @@ include("conexao.php");
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="navbar.css">
         <?php 
         $select_perfil = "SELECT * FROM u210937242_usuario WHERE USER_ID =" . $_SESSION['id'];
         $resultado = $conn->query($select_perfil) or die("Falha na execução do código SQL: " . $conn->connect_error) ;
@@ -15,6 +16,25 @@ include("conexao.php");
         ?>
     </head>
     <body>
+        <header>
+            <nav>
+                <a class="logo" href="Home.php">Fórum</a>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                    <div class="line4"></div>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="Login.html">Início</a></li>
+                    <li><a href="CriarPost.php">Criar Post</a></li>
+                    <li class="search-bar">
+                        <form action="buscar.php" method="get">
+                            <input type="text" name="q" placeholder="Buscar..." aria-label="Pesquisar">
+                            <button type="submit"><i class="bx bx-search"></i></button>
+                </ul>
+            </nav>
+        </header>
         <main>
             <section>
                 <div>
